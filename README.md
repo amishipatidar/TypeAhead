@@ -6,32 +6,32 @@ A high-level design (HLD) based search typeahead system built with **Node.js**, 
 
 ```text
 ┌─────────────────────────────────────────────────────────┐
-│                     Frontend (HTML/CSS/JS)               │
+│                     Frontend (HTML/CSS/JS)              │
 │  Search Bar → Debounced Input → Suggestion Dropdown     │
 │  Trending Section → Performance Dashboard               │
 └─────────────────────┬───────────────────────────────────┘
                       │ HTTP
 ┌─────────────────────▼───────────────────────────────────┐
-│                  Node.js + Express Server                │
-│                                                          │
-│  ┌──────────┐  ┌──────────┐  ┌──────────┐              │
-│  │ Sampler  │→ │  Batch   │→ │  Decay   │              │
-│  │ (rand<p) │  │Processor │  │   Job    │              │
-│  └──────────┘  │(count%n) │  │(×0.9/day)│              │
-│                └──────────┘  └──────────┘              │
-│                                                          │
+│                  Node.js + Express Server               │
+│                                                         │
+│  ┌──────────┐  ┌──────────┐  ┌──────────┐               │
+│  │ Sampler  │→ │  Batch   │→ │  Decay   │               │
+│  │ (rand<p) │  │Processor │  │   Job    │               │
+│  └──────────┘  │(count%n) │  │(×0.9/day)│               │
+│                └──────────┘  └──────────┘               │
+│                                                         │
 │  ┌────────────────────────────────────────┐             │
 │  │     Consistent Hash Ring               │             │
-│  │  ┌──────────┐┌──────────┐┌──────────┐ │             │
-│  │  │ Node 1   ││ Node 2   ││ Node 3   │ │             │
-│  │  └──────────┘└──────────┘└──────────┘ │             │
+│  │  ┌──────────┐┌──────────┐┌──────────┐ │              │
+│  │  │ Node 1   ││ Node 2   ││ Node 3   │ │              │
+│  │  └──────────┘└──────────┘└──────────┘ │              │
 │  └────────────────────────────────────────┘             │
 └─────────────────────┬───────────────────────────────────┘
                       │
 ┌─────────────────────▼───────────────────────────────────┐
-│                    Redis (Docker)                         │
-│  DB 0: Frequency Store    │  DB 1: Suggestions Store     │
-│  freq:<query> → count     │  sugg:<prefix> → top-k JSON  │
+│                    Redis (Docker)                       │
+│  DB 0: Frequency Store    │  DB 1: Suggestions Store    │
+│  freq:<query> → count     │  sugg:<prefix> → top-k JSON │
 └─────────────────────────────────────────────────────────┘
 ```
 
