@@ -4,7 +4,7 @@ A high-level design (HLD) based search typeahead system built with **Node.js**, 
 
 ## Architecture
 
-```
+```text
 ┌─────────────────────────────────────────────────────────┐
 │                     Frontend (HTML/CSS/JS)               │
 │  Search Bar → Debounced Input → Suggestion Dropdown     │
@@ -79,8 +79,7 @@ Response:
   "prefix": "iph",
   "suggestions": [
     { "query": "iphone", "count": 95000 },
-    { "query": "iphone price", "count": 42000 },
-    ...
+    { "query": "iphone price", "count": 42000 }
   ],
   "source": "cache",
   "node": "cache-node-2",
@@ -207,5 +206,3 @@ All parameters are configurable via `.env`:
 ## License
 
 MIT
-#   T y p e A h e a d  
- 
