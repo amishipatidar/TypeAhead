@@ -35,6 +35,14 @@ A high-level design (HLD) based search typeahead system built with **Node.js**, 
 └─────────────────────────────────────────────────────────┘
 ```
 
+## Screenshots
+
+> [!NOTE]
+> **Assignment Requirement #6 (Screenshots or short demo video)**
+> Please take a screenshot of your beautiful UI and save it in the repository as `docs/screenshot.png` so it appears below:
+
+![TypeAhead System UI](docs/screenshot.png)
+
 ## Setup Instructions
 
 ### Prerequisites
