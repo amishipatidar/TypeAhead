@@ -36,7 +36,11 @@ A high-level design (HLD) based search typeahead system built with **Node.js**, 
 ```
 
 ## Screenshots
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/7c4a2689-78b4-4886-ae39-53fc5631b934" />
 
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/61cbe56c-dc0a-4a7b-bcf1-52a1ddaaf7ce" />
+
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/d1275f23-79cf-4776-bee6-5f21a8994c1b" />
 
 ## Setup Instructions
 
